@@ -1,0 +1,577 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+ <fx>
+  <crank>
+   <name>engstart</name>
+   <path>Sounds/engstart.wav</path>
+   <property>Aircraft/Common-Spruce-CS1/Sounds/starter.wav</property>
+   <volume>
+    <offset>-0.4</offset>
+   </volume>
+  </crank>
+
+  <crank>
+   <name>crank</name>
+   <mode>looped</mode>
+   <path>Sounds/cranking.wav</path>
+   <condition>
+    <property>/engines/engine/cranking</property>
+    <not>
+     <property>/engines/engine/running</property>
+    </not>
+   </condition>
+   <volume>
+    <offset>-0.5</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine/cranking</property>
+    <factor>1.0</factor>
+   </pitch>
+  </crank>
+
+  <crank>
+   <name>cough</name>
+   <path>Aircraft/Common-Spruce-CS1/Sounds/startup.wav</path>
+   <property>/engines/engine/running</property>
+   <volume>
+    <offset>-0.50</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine/running</property>
+    <factor>1.0</factor>
+   </pitch>
+  </crank>
+
+  <engine>
+   <name>engine</name>
+   <mode>looped</mode>
+   <path>Aircraft/Common-Spruce-CS1/Sounds/rpm1.wav</path>
+   <condition>
+    <and>
+      <property>/engines/engine/running</property>
+      <less-than>
+      <property>/engines/engine/rpm</property>
+      <value>5000</value>
+      </less-than>
+      <not>
+        <property>sim/crashed</property>
+      </not>
+    </and>
+   </condition>
+   <volume>
+    <property>/engines/engine/rpm</property>
+    <factor>0.00033</factor>
+    <min>0.2</min>
+    <max>1.0</max>
+    <offset>0.0</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine/rpm</property>
+    <factor>0.00033</factor>
+    <min>0.0</min>
+    <max>1.0</max>
+   </pitch>
+  </engine>
+
+  <engine>
+   <name>enginerun</name>
+   <mode>looped</mode>
+   <path>Sounds/wasp.wav</path>
+   <condition>
+    <property>/engines/engine/running</property>
+    <and>
+      <greater-than>
+      <property>/engines/engine/rpm</property>
+      <value>400</value>
+      </greater-than>
+      <not>
+        <property>sim/crashed</property>
+      </not>
+    </and>
+   </condition>
+   <volume>
+    <property>/engines/engine/rpm</property>
+    <factor>0.00033</factor>
+    <min>0.0</min>
+    <max>1.00</max>
+    <offset>0.0</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine/rpm</property>
+    <factor>0.00033</factor>
+    <min>0.0</min>
+    <max>1.0</max>
+   </pitch>
+  </engine>
+ 
+  <flap>
+   <name>flaps</name>
+   <mode>in-transit</mode>
+   <path>Aircraft/Common-Spruce-CS1/Sounds/flaps.wav</path>
+   <property>/surface-positions/flap-pos-norm</property>
+   <volume>
+    <factor>30</factor>
+   </volume>
+  </flap>
+
+  <squeal>
+   <name>squeal</name>
+   <path>Sounds/squeal.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/speed-down-fps</property>
+    <factor>0.5</factor>
+    <max>1.0</max>
+   </volume>
+   <volume>
+    <property>/velocities/groundspeed-kt</property>
+    <factor>0.01</factor>
+    <max>1.0</max>
+   </volume>
+   <volume>
+    <internal>dt_stop</internal>
+    <factor>0.05</factor>
+    <max>1.0</max>
+   </volume>
+   <pitch>
+    <property>/velocities/groundspeed-kt</property>
+    <factor>0.0025</factor>
+    <offset>0.5</offset>
+    <max>1.0</max>
+   </pitch>
+  </squeal>
+
+  <rumble>
+   <name>rumble</name>
+   <mode>looped</mode>
+   <path>Sounds/rumble.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/groundspeed-kt</property>
+    <type>log</type>
+    <factor>0.25</factor>
+   </volume>
+  </rumble>
+
+  <gear>
+    <name>gear</name>
+    <mode>in-transit</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/gears.wav</path>
+    <property>/gear/gear[1]/position-norm</property>
+    <volume>
+      <max>1</max>
+    </volume>
+  </gear>
+
+  <gear>
+    <name>roll sound</name>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/onground.wav</path>
+    <condition>
+      <or>
+       <property>gear/gear[0]/wow</property>
+       <property>gear/gear[1]/wow</property>
+       <property>gear/gear[2]/wow</property>
+      </or>
+      <property>/sim/current-view/internal</property>
+      <property>/gear/gear[1]/position-norm</property>
+    </condition>
+    <mode>looped</mode>
+    <position>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>-2.5</z>
+    </position>
+    <volume>
+      <property>velocities/groundspeed-kt</property>
+      <factor>0.1</factor>
+      <offset>0.0</offset>
+    </volume>
+  </gear>
+
+  <voice>
+    <name>welcome anywhere</name>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/XY_welcome.wav</path>
+    <condition>>
+      <not>
+        <property>/sim/crashed</property>
+      </not>
+      <or>
+       <property>gear/gear[0]/wow</property>
+       <property>gear/gear[1]/wow</property>
+      </or>
+      <property>/gear/gear[1]/position-norm</property>
+      <property>/controls/airport/stewardess</property>
+      <equals>
+		    <property>/controls/airport/airport-country-id</property>
+        <value>XY</value>
+      </equals>
+    </condition>
+    <mode>once</mode>
+    <position>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>-2.5</z>
+    </position>
+    <volume>
+      <property>velocities/groundspeed-kt</property>
+      <factor>50</factor>
+      <max>24.0</max>
+      <min>16.0</min>
+    </volume>
+  </voice>
+
+  <voice>
+    <name>welcome LS</name>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/LS_welcome.wav</path>
+    <condition>
+      <not>
+        <property>/sim/crashed</property>
+      </not>
+      <or>
+       <property>gear/gear[0]/wow</property>
+       <property>gear/gear[1]/wow</property>
+      </or>
+      <property>/gear/gear[1]/position-norm</property>
+      <property>/controls/airport/stewardess</property>
+      <equals>
+		    <property>/controls/airport/airport-country-id</property>
+        <value>LS</value>
+      </equals>
+    </condition>
+    <mode>once</mode>
+    <position>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>-2.5</z>
+    </position>
+    <volume>
+      <property>velocities/groundspeed-kt</property>
+      <factor>50</factor>
+      <max>24.0</max>
+      <min>16.0</min>
+    </volume>
+  </voice>
+
+  <voice>
+    <name>welcome ED</name>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/ED_welcome.wav</path>
+    <condition>
+      <not>
+        <property>/sim/crashed</property>
+      </not>
+      <or>
+       <property>gear/gear[0]/wow</property>
+       <property>gear/gear[1]/wow</property>
+      </or>
+      <property>/gear/gear[1]/position-norm</property>
+      <property>/controls/airport/stewardess</property>
+      <equals>
+		    <property>/controls/airport/airport-country-id</property>
+        <value>ED</value>
+      </equals>
+    </condition>
+    <mode>once</mode>
+    <position>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>-2.5</z>
+    </position>
+    <volume>
+      <property>velocities/groundspeed-kt</property>
+      <factor>50</factor>
+      <max>24.0</max>
+      <min>16.0</min>
+    </volume>
+  </voice>
+ 
+  <warning>
+    <name>gears warning</name>
+    <mode>once</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/warningGears.wav</path>
+    <property>/sim/alarms/gear-warning</property>
+    <volume>
+       <factor>20</factor>
+    </volume>
+  </warning>
+
+  <wind>
+   <name>wind</name>
+   <mode>looped</mode>
+   <path>Sounds/wind.wav</path>
+   <property>/velocities/airspeed-kt</property>
+   <volume>
+     <property>/velocities/airspeed-kt</property>
+     <factor>0.0025</factor>
+     <min>0.00</min>
+     <max>0.5</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+    <offset>0.5</offset>
+    <max>1.0</max>
+   </pitch>
+  </wind>
+ 
+  <stall>
+   <name>stall</name>
+   <mode>looped</mode>
+   <path>Sounds/stall.wav</path>
+   <property>/sim/alarms/stall-warning</property>
+   <volume>
+    <property>/sim/alarms/stall-warning</property>
+    <max>1.0</max>
+   </volume>
+  </stall>
+
+  <rain>
+    <name>rain</name>
+    <mode>looped</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/rain.wav</path>
+    <condition>
+      <greater-than>
+        <property>/environment/metar/rain-norm</property>
+        <value>0.2</value>
+      </greater-than>
+    </condition>
+    <volume>
+      <property>/environment/metar/rain-norm</property>
+      <factor>1.00</factor>
+      <offset>0.00</offset>
+      <min>0.4</min>
+      <max>0.9</max>
+    </volume>
+    <pitch>
+      <property>/velocities/airspeed-kt</property>
+      <factor>0.001</factor>
+      <offset>1.0</offset>
+    </pitch>
+  </rain>
+
+
+  <pump>
+    <name>fuel pump</name>
+    <type>avionics</type>
+    <mode>looped</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/fuelpump.wav</path>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/fuel-pump</property>
+        <value>5</value>
+      </greater-than>
+    </condition>
+  </pump>
+
+  <crash>
+    <name>intense ground contact</name>
+    <mode>once</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/crashed.wav</path>
+    <property>/sim/crashed</property>
+    <volume>
+        <factor>1</factor>
+    </volume>
+    <pitch>
+        <factor>1</factor>
+    </pitch>
+    <reference-dist>500</reference-dist>
+    <max-dist>1000</max-dist>
+  </crash>
+
+  <!-- Toggle Switches -->     
+  <switch>
+    <name>click on</name>
+    <mode>once</mode>
+    <path>Sounds/click.wav</path>
+    <condition>
+      <property>/sim/sound/switch</property>
+    </condition>
+    <volume>
+      <offset> 0.7 </offset>
+    </volume>
+    <position>
+      <x> -0.5 </x>
+      <y>  0.0 </y>
+      <z>  0.0 </z>
+    </position>
+    <reference-dist> 2.0 </reference-dist>
+    <max-dist> 4.0 </max-dist>
+  </switch>
+
+  <switch>
+    <name>click off</name>
+    <mode>once</mode>
+    <path>Sounds/click.wav</path>
+    <condition>
+      <not>
+        <property>/sim/sound/switch</property>
+      </not>
+    </condition>
+    <volume>
+      <offset> 0.7 </offset>
+    </volume>
+    <position>
+      <x> -0.5 </x>
+      <y>  0.0 </y>
+      <z>  0.0 </z>
+    </position>
+    <reference-dist> 2.0 </reference-dist>
+    <max-dist> 4.0 </max-dist>
+  </switch>
+
+  <switch>
+    <name>click2 on</name>
+    <mode>once</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/click2.wav</path>
+    <condition>
+      <property>/sim/sound/switch2</property>
+    </condition>
+    <volume>
+      <offset> 1 </offset>
+    </volume>
+    <position>
+      <x> -0.5 </x>
+      <y>  0.0 </y>
+      <z>  0.0 </z>
+    </position>
+    <reference-dist> 2.0 </reference-dist>
+    <max-dist> 4.0 </max-dist>
+  </switch>
+
+  <switch>
+    <name>click2 off</name>
+    <mode>once</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/click2.wav</path>
+    <condition>
+      <not>
+        <property>/sim/sound/switch2</property>
+      </not>
+    </condition>
+    <volume>
+      <offset> 1 </offset>
+    </volume>
+    <position>
+      <x> -0.5 </x>
+      <y>  0.0 </y>
+      <z>  0.0 </z>
+    </position>
+    <reference-dist> 2.0 </reference-dist>
+    <max-dist> 4.0 </max-dist>
+  </switch>
+
+  <brake>
+    <name>brake on</name>
+    <mode>once</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/squeal2.wav</path>
+    <condition>
+      <property>/controls/gear/brake-parking</property>
+    </condition>
+    <volume>
+      <offset>-0.9 </offset>
+    </volume>
+    <position>
+      <x> -0.5 </x>
+      <y>  0.0 </y>
+      <z>  0.0 </z>
+    </position>
+    <reference-dist> 3.0 </reference-dist>
+    <max-dist> 4.0 </max-dist>
+  </brake>
+
+  <brake>
+    <name>brake off</name>
+    <mode>once</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/squeal2.wav</path>
+    <condition>
+      <not>
+        <property>/controls/gear/brake-parking</property>
+      </not>
+    </condition>
+    <volume>
+      <offset>-0.9 </offset>
+    </volume>
+    <position>
+      <x> -0.5 </x>
+      <y>  0.0 </y>
+      <z>  0.0 </z>
+    </position>
+    <reference-dist> 3.0 </reference-dist>
+    <max-dist> 4.0 </max-dist>
+  </brake>
+
+  <door>
+    <name>open pilots door</name>
+    <mode>once</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/doors.wav</path>
+    <condition>
+      <greater-than>
+        <property>/controls/doors/position-norm[0]</property>
+        <value>0.0</value>
+      </greater-than>
+    </condition>
+  </door>
+
+  <door>
+    <name>close pilots door</name>
+    <mode>once</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/doors.wav</path>
+    <condition>
+      <less-than>
+        <property>/controls/doors/position-norm[0]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+  </door>
+  <door>
+    <name>open copilots door</name>
+    <mode>once</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/doors.wav</path>
+    <condition>
+      <greater-than>
+        <property>/controls/doors/position-norm[1]</property>
+        <value>0.0</value>
+      </greater-than>
+    </condition>
+  </door>
+
+  <door>
+    <name>close copilots door</name>
+    <mode>once</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/doors.wav</path>
+    <condition>
+      <less-than>
+        <property>/controls/doors/position-norm[1]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+  </door>
+
+  <waltz>
+    <name>Jack Sparrow Theme</name>
+    <mode>looped</mode>
+    <path>Aircraft/Common-Spruce-CS1/Sounds/jack_sparrow.wav</path>
+     <condition>
+       <equals>
+         <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+         <value>135.99</value>
+       </equals>
+     </condition>
+      <volume>
+        <max>1</max>
+      </volume>
+    </waltz> 
+
+
+ </fx>
+</PropertyList>

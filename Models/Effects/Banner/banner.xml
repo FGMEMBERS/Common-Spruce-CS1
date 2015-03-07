@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>banner.ac</path>
+  <animation>
+    <type>select</type>
+    <object-name>bannerLSZH1</object-name>
+    <object-name>bannerLSZH2</object-name>
+    <object-name>bannerLSZH3</object-name>
+    <object-name>bannerLSZH4</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[8]</property>
+          <value type="int">1</value>
+        </equals>
+        <not>
+          <property>sim/crashed</property>
+          <value type="bool">1</value>
+        </not>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>bannerLOWI1</object-name>
+    <object-name>bannerLOWI2</object-name>
+    <object-name>bannerLOWI3</object-name>
+    <object-name>bannerLOWI4</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[8]</property>
+          <value type="int">2</value>
+        </equals>
+        <not>
+          <property>sim/crashed</property>
+          <value type="bool">1</value>
+        </not>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>bannerLSZS1</object-name>
+    <object-name>bannerLSZS2</object-name>
+    <object-name>bannerLSZS3</object-name>
+    <object-name>bannerLSZS4</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[8]</property>
+          <value type="int">3</value>
+        </equals>
+        <not>
+          <property>sim/crashed</property>
+          <value type="bool">1</value>
+        </not>
+      </and>
+    </condition>
+  </animation>
+
+
+
+  <animation>
+    <type>material</type>
+    <object-name>bannerLSZH1</object-name>
+    <object-name>bannerLSZH2</object-name>
+    <object-name>bannerLSZH3</object-name>
+    <object-name>bannerLSZH4</object-name>
+    <object-name>bannerLOWI1</object-name>
+    <object-name>bannerLOWI2</object-name>
+    <object-name>bannerLOWI3</object-name>
+    <object-name>bannerLOWI4</object-name>
+    <object-name>bannerLSZS1</object-name>
+    <object-name>bannerLSZS2</object-name>
+    <object-name>bannerLSZS3</object-name>
+    <object-name>bannerLSZS4</object-name>
+    <emission>
+      <red>0.010</red>
+      <green>0.010</green>
+      <blue>0.010</blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <!-- animation of the banner -->
+  <animation>
+    <type>translate</type>
+    <object-name>bannerLSZH1</object-name>
+    <object-name>bannerLSZH2</object-name>
+    <object-name>bannerLSZH3</object-name>
+    <object-name>bannerLSZH4</object-name>
+    <object-name>bannerLOWI1</object-name>
+    <object-name>bannerLOWI2</object-name>
+    <object-name>bannerLOWI3</object-name>
+    <object-name>bannerLOWI4</object-name>
+    <object-name>bannerLSZS1</object-name>
+    <object-name>bannerLSZS2</object-name>
+    <object-name>bannerLSZS3</object-name>
+    <object-name>bannerLSZS4</object-name>
+    <property>sim/multiplay/generic/float[6]</property>
+    <offset>0</offset>
+    <factor>0.2</factor>
+    <max-m>15</max-m>
+    <axis> 
+      <x>1</x>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bannerLSZH1</object-name>
+    <object-name>bannerLOWI1</object-name>
+    <object-name>bannerLSZS1</object-name>
+    <property>sim/multiplay/generic/float[6]</property>
+    <factor>5</factor>
+    <center>
+      <x-m>11.487</x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bannerLSZH3</object-name>
+    <object-name>bannerLOWI3</object-name>
+    <object-name>bannerLSZS3</object-name>
+    <property>sim/multiplay/generic/float[6]</property>
+    <factor>3</factor>
+    <center>
+      <x-m>21.814</x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bannerLSZH2</object-name>
+    <object-name>bannerLOWI2</object-name>
+    <object-name>bannerLSZS2</object-name>
+    <property>sim/multiplay/generic/float[6]</property>
+    <factor>-4</factor>
+    <center>
+      <x-m>16.628</x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bannerLSZH4</object-name>
+    <object-name>bannerLOWI4</object-name>
+    <object-name>bannerLSZS4</object-name>
+    <property>sim/multiplay/generic/float[6]</property>
+    <factor>-2</factor>
+    <center>
+      <x-m>27.606</x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+
+</PropertyList>

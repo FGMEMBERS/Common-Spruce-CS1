@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>light-cone.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object-name>Cone-texture</object-name>
+    <condition>
+      <property>sim/multiplay/generic/int[4]</property>
+    </condition>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Common-Spruce-CS1/Models/Effects/light-cone.eff</inherits-from>
+    <object-name>Cone</object-name>
+  </effect>
+  
+ </PropertyList>

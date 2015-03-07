@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>cabin.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>cabin</object-name>
+    <object-name>DoorFront</object-name>
+    <object-name>DoorBack</object-name>
+    <object-name>seatC</object-name>
+    <object-name>seatCP</object-name>
+    <object-name>flaps-yoke</object-name>
+    <object-name>doorHandle</object-name>
+    <object-name>doorHandle2</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>cabin</object-name>
+    <object-name>DoorFront</object-name>
+    <object-name>DoorBack</object-name>
+    <object-name>seatC</object-name>
+    <object-name>seatCP</object-name>
+    <object-name>flaps-yoke</object-name>
+    <object-name>doorHandle</object-name>
+    <object-name>doorHandle2</object-name>
+    <emission>
+      <red>0.002</red>
+      <green>0.002</green>
+      <blue>0.002</blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>BattToggle</object-name>
+    <object-name>StarterSwitch</object-name>
+    <object-name>StarterToggle</object-name>
+    <object-name>AltSwitch</object-name>
+    <object-name>AltToggle</object-name>
+    <object-name>PumpSwitch</object-name>
+    <object-name>PumpToggle</object-name>
+    <object-name>Instr-Switch</object-name>
+    <object-name>Instr_Toggle</object-name>
+    <object-name>L_lightSwitch</object-name>
+    <object-name>L_lightToggle</object-name>
+    <object-name>N_lightSwitch</object-name>
+    <object-name>N_lightToggle</object-name>
+    <object-name>fySwitchOff</object-name>
+    <object-name>fySwitchOn</object-name>
+    <emission>
+      <red>0.010</red>
+      <green>0.010</green>
+      <blue>0.010</blue>
+      <factor-prop>/systems/electrical/outputs/efis-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>BattSwitch</object-name>
+    <emission>
+      <red>0.09</red>
+      <green>0.14</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Common-Spruce-CS1/Models/Effects/glass_reflect</inherits-from>
+    <object-name>DoorFrontGlass</object-name>
+    <object-name>DoorBackGlass</object-name>
+  </effect>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>DoorFrontGlass</object-name>
+    <object-name>DoorBackGlass</object-name>
+    <object-name>DoorFront</object-name>
+    <object-name>DoorBack</object-name>
+  </animation>
+
+<!-- Front - Yoke -->
+ 	<animation>
+		<type>rotate</type>
+		<object-name>front-yoke</object-name>
+    <object-name>fySwitchOff</object-name>
+    <object-name>fySwitchOn</object-name>
+    <object-name>fySwitchHandle</object-name>
+		<property>/controls/flight/elevator</property>
+		<min-deg>-9</min-deg>
+		<max-deg>18</max-deg>
+		<factor>18</factor>
+		<center>
+			<x-m>-1.696</x-m>
+			<y-m>-0.015</y-m>
+			<z-m>-0.489</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-0.020925</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+
+ 	<animation>
+		<type>rotate</type>
+		<object-name>front-yoke</object-name>
+    <object-name>fySwitchOff</object-name>
+    <object-name>fySwitchOn</object-name>
+    <object-name>fySwitchHandle</object-name>
+		<property>/controls/flight/aileron</property>
+		<min-deg>-9</min-deg>
+		<max-deg>9</max-deg>
+		<factor>-9</factor>
+		<center>
+			<x-m>-1.696</x-m>
+			<y-m>-0.015</y-m>
+			<z-m>-0.489</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+  <!-- animate knob on front-yoke -->
+  <animation>
+    <type>select</type>
+    <object-name>fySwitchOff</object-name>
+    <condition>
+      <not>
+        <property>/controls/banner/show</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>fySwitchOn</object-name>
+    <condition>
+      <property>/controls/banner/show</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>fySwitchHandle</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>cs1.banner_start_stop()</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+
+<!-- pedals -->
+ <animation>
+  <type>rotate</type>
+  <object-name>front-left-pedal</object-name>
+		<property>/controls/flight/rudder</property>
+		<min-deg>-25</min-deg>
+		<max-deg>25</max-deg>
+		<factor>-25</factor>
+		<center>
+			<x-m>-2.238</x-m>
+			<y-m>-0.286</y-m>
+			<z-m>-0.313</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>front-right-pedal</object-name>
+		<property>/controls/flight/rudder</property>
+		<min-deg>-25</min-deg>
+		<max-deg>25</max-deg>
+		<factor>25</factor>
+		<center>
+			<x-m>-2.238</x-m>
+			<y-m>-0.286</y-m>
+			<z-m>-0.313</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+ </animation>
+
+  <!-- animate of the doors -->
+  <animation>
+    <type>rotate</type>
+    <object-name>DoorFront</object-name>
+    <object-name>DoorFrontGlass</object-name>
+    <object-name>doorHandle</object-name>
+    <object-name>doorHandleClick</object-name>
+    <property>sim/multiplay/generic/float[13]</property>
+    <factor> -74 </factor>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+    <center>
+      <x-m>-2.014</x-m>
+      <y-m>-0.316</y-m>
+      <z-m> 0.104</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>DoorBack</object-name>
+    <object-name>DoorBackGlass</object-name>
+    <object-name>doorHandle2</object-name>
+    <object-name>doorHandle2Click</object-name>
+    <property>sim/multiplay/generic/float[14]</property>
+    <factor> -74 </factor>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+    <center>
+      <x-m>-1.237</x-m>
+      <y-m>-0.299</y-m>
+      <z-m> 0.108</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>doorHandle</object-name>
+		<property>sim/multiplay/generic/float[13]</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.01 </ind><dep> 90 </dep></entry>
+      <entry><ind> 0.10 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+			<x-m>-1.400</x-m>
+			<y-m> 0 </y-m>
+			<z-m> 0.219</z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>doorHandle2</object-name>
+		<property>sim/multiplay/generic/float[14]</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.01 </ind><dep> 90 </dep></entry>
+      <entry><ind> 0.10 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+			<x-m>-0.663</x-m>
+			<y-m> 0</y-m>
+			<z-m> 0.223</z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>doorHandleClick</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>cs1.PilotDoor();</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>doorHandle2Click</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>cs1.CopilotDoor();</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+
+<!-- Throttle Control must be here, not in the cockpit.xml for better animation when door is open -->
+    <model>
+        <name>Throttle lever</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/throttle/throttle.xml</path>
+        <offsets>
+            <x-m>-1.840</x-m>
+            <y-m>-0.280</y-m>
+            <z-m> 0.180</z-m>
+        </offsets>
+    </model>
+
+    <!-- animate the Throttle lever if door toggle -->
+    <animation>
+      <type>rotate</type>
+      <object-name>Throttle lever</object-name>
+      <property>sim/multiplay/generic/float[13]</property>
+      <factor> -75 </factor>
+      <axis>
+        <x>0</x>
+        <y>0</y>
+        <z>1</z>
+      </axis>
+      <center>
+        <x-m>-2.014</x-m>
+        <y-m>-0.316</y-m>
+        <z-m> 0.104</z-m>
+      </center>
+    </animation>
+
+<!-- Flaps lever -->
+  <animation>
+    <type>rotate</type>
+    <object-name>flaps-yoke</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <interpolation>
+      <entry><ind>0</ind><dep>  0</dep></entry>
+      <entry><ind>0.33</ind><dep>3</dep></entry>
+      <entry><ind>0.66</ind><dep>7</dep></entry>
+      <entry><ind>   1</ind><dep>15</dep></entry>
+    </interpolation>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>-1.6956</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.320</z-m>
+    </center>
+  </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>flaps-yoke</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>controls.flapsDown(1)</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>controls.flapsDown(-1)</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+<!--    Controls    -->
+  <animation>
+  <type>rotate</type>
+  <object-name>AltToggle</object-name>
+  <property>/controls/electric/engine/generator</property>
+  <factor>60</factor>
+  <axis>
+    <x> 0.1</x>
+    <y>-0.9</y>
+    <z>-0.0</z>
+  </axis>
+  <center>
+    <x-m>-2.013</x-m>
+    <y-m>-0.268</y-m>
+    <z-m> 0.256</z-m>
+  </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>StarterToggle</object-name>
+    <property>/controls/engines/engine/starter</property>
+    <factor>60</factor>
+    <axis>
+      <x> 0.1</x>
+      <y>-0.9</y>
+      <z> 0.0</z>
+    </axis>
+    <center>
+      <x-m>-1.996</x-m>
+      <y-m>-0.266</y-m>
+      <z-m> 0.211</z-m>
+    </center>
+  </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>PumpToggle</object-name>
+  <property>/controls/engines/engine/fuel-pump</property>
+  <factor>60</factor>
+  <axis>
+    <x> 0.1</x>
+    <y>-0.9</y>
+    <z> 0.0</z>
+  </axis>
+  <center>
+    <x-m>-1.975</x-m>
+    <y-m>-0.267</y-m>
+    <z-m> 0.164</z-m>
+  </center>
+  </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>BattToggle</object-name>
+  <property>/controls/electric/battery-switch</property>
+  <factor>60</factor>
+  <axis>
+    <x> 0.1</x>
+    <y>-0.9</y>
+    <z> 0.0</z>
+  </axis>
+  <center>
+    <x-m>-1.959</x-m>
+    <y-m>-0.271</y-m>
+    <z-m> 0.121</z-m>
+  </center>
+  </animation>
+
+
+  <animation>
+  <type>rotate</type>
+  <object-name>L_lightToggle</object-name>
+  <property>/controls/lighting/landing-lights</property>
+  <factor>60</factor>
+  <axis>
+    <x>-0.15</x>
+    <y>-0.85</y>
+    <z> 0.0</z>
+  </axis>
+  <center>
+    <x-m>-1.978</x-m>
+    <y-m> 0.233</y-m>
+    <z-m> 0.166</z-m>
+  </center>
+  </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>N_lightToggle</object-name>
+  <property>/controls/lighting/nav-lights</property>
+  <factor>60</factor>
+  <axis>
+    <x>-0.15</x>
+    <y>-0.85</y>
+    <z> 0.0</z>
+  </axis>
+  <center>
+    <x-m>-1.994</x-m>
+    <y-m> 0.231</y-m>
+    <z-m> 0.209</z-m>
+  </center>
+  </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>Instr_Toggle</object-name>
+  <property>/controls/lighting/instrument-lights</property>
+  <factor>60</factor>
+  <axis>
+    <x>-0.15</x>
+    <y>-0.85</y>
+    <z> 0.0</z>
+  </axis>
+  <center>
+    <x-m>-2.016</x-m>
+    <y-m> 0.234</y-m>
+    <z-m> 0.252</z-m>
+  </center>
+  </animation>
+
+<!-- Switches -->
+
+  <animation>
+    <type>pick</type>
+    <object-name>BattSwitch</object-name>
+    <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electric/battery-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>StarterSwitch</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>controls.startEngine(1)</script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>nasal</command>
+          <script>controls.startEngine(0)</script>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>AltSwitch</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electric/engine/generator</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>PumpSwitch</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/engines/engine/fuel-pump</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Instr-Switch</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/instrument-lights</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>L_lightSwitch</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/landing-lights</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>N_lightSwitch</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/nav-lights</property>
+      </binding> 
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/strobe</property>
+      </binding>       
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+</PropertyList>
+

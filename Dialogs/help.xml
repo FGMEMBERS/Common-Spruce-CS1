@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<text>
+  _________________Startup-Procedures___________________
+
+  1.     Set magneto switch to ' BOTH '
+  2.     Set fuel tank switch to ' Rear Tank '
+  3.     Engage battery switch
+  4.     Engage fuel pump switch
+  5.     Engage starter switch
+  6.     Once engine is running engage alternator switch
+
+         or use only the Autostart with ' s '
+         and Autostop with ' Ctrl +  s '
+
+  _______________________Notice_________________________
+  Thanks to all flightgear authors I have stolen from with eyes 
+  and fingers for this little common spruce aircraft.
+  - Syd Adams
+  - Anders Gidenstam
+  - Ron Jensen
+  - Torsten Dreyer
+  - Stuart Buchanan
+  - Frank Goeldner
+  - PAF Team
+  - Clement de l'Hamaide
+  - Emmanuel Barranger
+  - Maik Justus
+  - Lee Elliott
+  - Yurik V. Nikiforoff
+  - Enrique Laso 
+  - Alexis Bory
+
+  For paintings, ideas and motivation thanks to:
+  - Michat
+  - Antonio
+  - Michael
+</text>
+<key>
+  <name>s</name>
+  <desc>Autostart</desc>
+</key>
+<key>
+  <name>Ctrl + s</name>
+  <desc>Autostop</desc>
+</key>
+<key>
+  <name>&lt;</name>
+  <desc>show Banner</desc>
+</key>
+<key>
+  <name>j</name>
+  <desc>start/stop colored smoke</desc>
+</key>
+<key>
+  <name>l</name>
+  <desc>increase smoke</desc>
+</key>
+<key>
+  <name>Shift + l</name>
+  <desc>decrease smoke</desc>
+</key>
+<key>
+  <name>k</name>
+  <desc>change colored smoke</desc>
+</key>
+
+</PropertyList>

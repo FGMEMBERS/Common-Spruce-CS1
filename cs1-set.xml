@@ -1,0 +1,460 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <sim>
+    <status>alpha</status>
+    <aircraft-version>6.5</aircraft-version>
+    <author>Marc Kraus</author>
+    <flight-model>yasim</flight-model>
+    <aero>cs1-yasim</aero>
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <description>CS-1</description>
+    <rating>
+     <FDM type="int">     4 </FDM>
+     <systems type="int"> 2 </systems>
+     <cockpit type="int"> 3 </cockpit>
+     <model type="int">   5 </model>
+    </rating>
+
+    <sound>
+      <path>Aircraft/Common-Spruce-CS1/Sounds/cs1-sound.xml</path>
+      <volume>0.5</volume>
+    </sound>
+
+    <startup>
+     <splash-texture>Aircraft/Common-Spruce-CS1/cs1-splash.png</splash-texture>
+    </startup>
+
+    <model>
+      <path archive="y">Aircraft/Common-Spruce-CS1/Models/CS-1.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <start-idling type="bool">0</start-idling>
+      <shadow-3d type="bool">1</shadow-3d>
+    </model>
+
+    <menubar include="Dialogs/cs1-menu.xml"/>
+
+    <help include="Dialogs/help.xml"/>
+
+    <remote>
+     <pilot-callsign type="string"/>
+    </remote>
+
+    <chase-distance-m>-10</chase-distance-m>
+
+    <airport>
+      <runways>
+        <start-offset-m>-10</start-offset-m>
+      </runways>
+    </airport>
+
+    <multiplay n="0">
+      <chat_display>1</chat_display>
+      <generic n="0">
+	      <int n="0" type="int">  0 </int>  <!-- Dual Control boolean switches -->
+	      <int n="1" type="int">  0 </int>  <!-- Dual Control boolean light switches-->
+        <int n="2" alias="/controls/lighting/beacon-light"/>
+        <int n="3" alias="/controls/lighting/strobe-light"/>
+        <int n="4" alias="/controls/lighting/landing-lights"/>
+        <int n="5" alias="/controls/lighting/nav-lights"/>
+        <int n="6" alias="/controls/lighting/instrument-lights"/>
+        <int n="7" alias="/controls/fuel/switch-position"/>
+        <int n="8" alias="/controls/banner/show"/>
+        <int n="9" alias="/smoke/active"/>
+        <int n="10" type="int">  0 </int>                                         <!-- 0 immat -->
+        <int n="11" type="int">  0 </int>                                         <!-- 1 immat -->
+        <int n="12" type="int">  0 </int>                                         <!-- 2 immat -->
+        <int n="13" type="int">  0 </int>                                         <!-- 3 immat -->
+        <int n="14" type="int">  0 </int>                                         <!-- 4 immat -->
+        <int n="15" type="int">  0 </int>                                         <!-- 5 immat -->
+        <int n="16" type="int">  0 </int>                                         <!-- 6 immat -->          
+
+        <float n="0" alias="/position/altitude-agl-ft"/>
+        <float n="1" alias="/orientation/pitch-deg"/>
+        <float n="2" alias="/orientation/roll-deg"/>
+        <float n="3" alias="/smoke/red"/>                               
+        <float n="4" alias="/smoke/green"/>                                
+        <float n="5" alias="/smoke/blue"/>  
+        <float n="6" alias="/controls/banner/wave"/>
+        <float n="7" alias="/controls/flight/elevator-trim"/>
+        <float n="8" alias="/controls/flight/rudder-trim"/>
+        <float n="9" alias="/controls/flight/aileron-trim"/>
+        <float n="10" alias="/controls/engines/engine/throttle"/>
+        <float n="11" alias="/controls/engines/engine/mixture"/>
+        <float n="12" alias="/velocities/groundspeed-kt"/>        
+        <float n="13" alias="/controls/doors/position-norm[0]"/>
+        <float n="14" alias="/controls/doors/position-norm[1]"/>
+
+
+        <string n="0" type="string"></string> <!-- Dual Control analog TDM-mpp1 (magnetos, flaps etc.) -->
+        <string n="2" type="string"></string> <!-- Dual Control analog TDM-mpp2 only pilot to copilot (fuel in tank etc.) -->
+        <string n="3" type="string"></string> <!-- Dual Control analog TDM-mpp3 only pilot to copilot (course) -->
+        <string n="4" alias="/controls/airport/airport-country-id"/> <!-- Show the first 2 country chars -->
+      </generic>
+    </multiplay>
+
+		<!-- Head-up display settings -->
+		<hud>
+			<path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/Hud/default.xml</path>
+			<path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/Hud/NTPS.xml</path>
+			<visibility type="bool">false</visibility>
+			<visibility type="bool">false</visibility>
+		</hud>
+
+    <view n="0">
+      <internal archive="y">true</internal>
+      <config>
+       <x-offset-m archive="y">-0.010 </x-offset-m>	<!-- Right -->
+       <y-offset-m archive="y"> 0.470 </y-offset-m>	<!-- Up    -->
+       <z-offset-m archive="y">-1.365 </z-offset-m>	<!-- Back  -->
+       <pitch-offset-deg> -8.000 </pitch-offset-deg>
+        <default-field-of-view-deg>60</default-field-of-view-deg>
+      </config>
+    </view>
+
+    <view n="1">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="2">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="3">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="4">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="5">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="6">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <allow-toggle-cockpit>true</allow-toggle-cockpit>
+
+    <systems>
+        <electrical>
+            <path></path>
+        </electrical>
+        <autopilot>
+            <path>Aircraft/Common-Spruce-CS1/Systems/cs1-autopilot.xml</path>
+        </autopilot>
+    </systems>
+
+    <!-- do not work in Flightgear 2.4 and older -->
+    <flight-recorder>
+      <replay-config type="int">0</replay-config>
+      <config n="0" include="/Aircraft/Generic/flightrecorder/generic-piston-propeller-1.xml">
+        <signal>
+            <type>int</type>
+            <property type="string">controls/fuel/switch-position</property>
+        </signal>
+        <signal>
+            <type>int</type>
+            <property type="string">controls/electric/engine/generator</property>
+        </signal>
+        <signal>
+            <type>int</type>
+            <property type="string">controls/electric/battery-switch</property>
+        </signal>
+        <signal>
+            <type>int</type>
+            <property type="string">controls/lighting/nav-lights</property>
+        </signal>
+        <signal>
+            <type>int</type>
+            <property type="string">controls/lighting/strobe</property>
+        </signal>
+        <signal>
+            <type>int</type>
+            <property type="string">controls/banner/show</property>
+        </signal>
+        <signal>
+            <type>int</type>
+            <property type="string">smoke/active</property>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">gear/gear[0]/position-norm</property>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">gear/gear[1]/position-norm</property>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">gear/gear[2]/position-norm</property>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">smoke/red</property>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">smoke/green</property>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">smoke/blue</property>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">instrumentation/doors/pilot/position-norm</property>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">instrumentation/doors/copilot/position-norm</property>
+        </signal>
+      </config>
+    </flight-recorder>
+
+  </sim>
+
+
+  <engines>
+    <engine>
+      <rpm type="double">0</rpm>
+      <magnetos>0</magnetos>
+      <running>false</running>
+    </engine>
+  </engines>
+
+  <controls>
+      <lighting>
+          <instruments-norm>1.0</instruments-norm>
+      </lighting>
+      <fuel>
+          <switch-position type="int">-1</switch-position>
+      </fuel>
+      <gear>
+          <brake-parking type="double">1.0</brake-parking>
+          <gear-down type="bool">1.0</gear-down>
+          <tailwheel-lock>1</tailwheel-lock>
+      </gear>
+      <electric>
+          <avionics-switch type="bool">1</avionics-switch>
+      </electric>
+      <flight>
+          <aileron-trim>0.007</aileron-trim>
+      </flight>
+      <airport>
+          <stewardess type="bool">0</stewardess>
+          <airport-country-id type="string">XY</airport-country-id>
+      </airport>
+      <banner>
+          <show type="int">0</show>
+          <selected type="int">1</selected>
+          <wave type="double">0.0</wave>
+      </banner>
+      <doors>
+          <position-norm n="0" type="double">0</position-norm>
+          <position-norm n="1" type="double">0</position-norm>
+      </doors>
+  </controls>
+
+  <instrumentation>
+    <kr-87>
+      <inputs>
+        <volume>0.05</volume>
+      </inputs>
+    </kr-87>
+    <!-- Flightgear Rallye Watch  -->
+    <frw>
+      <running type="bool">0</running>
+      <btn-mode type="bool">0</btn-mode>
+      <btn-reset type="bool">0</btn-reset>
+      <btn-start-stop type="bool">0</btn-start-stop>
+      <flight-time>
+        <start-time type="double">0</start-time>
+        <accu type="double">0</accu>
+        <total type="double">0</total>
+        <hours type="int">0</hours>
+        <minutes type="int">0</minutes>
+        <seconds type="int">0</seconds>
+      </flight-time>
+    </frw>
+    <aglradar>
+      <power-btn type="bool">1</power-btn>
+      <switch-meter-ft type="bool">1</switch-meter-ft>
+    </aglradar>
+		<!-- RADAR in the HUD -->
+    <radar>
+      <range type="int">40</range>
+    </radar>
+  </instrumentation>
+  <!-- not nil for ap-instrument of copilot -->
+  <autopilot>
+    <settings>
+        <target-speed-kt type="double">260</target-speed-kt>
+        <target-pitch-deg type="double">0</target-pitch-deg>
+        <target-altitude-ft type="int">0</target-altitude-ft>
+        <heading-bug-deg type="int">0</heading-bug-deg>
+    </settings>
+    <switches>
+      <ap type="bool">0</ap>
+      <hdg type="bool">0</hdg>
+      <alt type="bool">0</alt>
+      <ias type="bool">0</ias>
+      <nav type="bool">0</nav>
+      <appr type="bool">0</appr>
+    </switches>    
+  </autopilot>
+
+  <smoke>
+    <active type="int">0</active>
+    <particlepersec>50</particlepersec>
+    <color>0</color>
+    <red type="float">1.0</red>
+    <green type="float">1.0</green>
+    <blue type="float">1.0</blue>
+    <colors>
+      <color><!-- first default white -->
+        <red type="float">1.0</red>
+        <green type="float">1.0</green>
+        <blue type="float">1.0</blue>
+        <scale type="bool">0</scale>
+      </color>
+      <!-- Badische Flagge - flag from the south-west of germany -->
+      <color><!-- second default yellow -->
+        <red type="float">1.0</red>
+        <green type="float">1.0</green>
+        <blue type="float">0.0</blue>
+        <scale type="bool">0</scale>
+      </color>
+      <color><!-- third default red -->
+        <red type="float">1.0</red>
+        <green type="float">0.0</green>
+        <blue type="float">0.0</blue>
+        <scale type="bool">0</scale>
+      </color>
+      <color><!-- fourth default yellow -->
+        <red type="float">1.0</red>
+        <green type="float">1.0</green>
+        <blue type="float">0.0</blue>
+        <scale type="bool">0</scale>
+      </color>
+      <knob-red type="float">0.0</knob-red>
+      <knob-green type="float">0.0</knob-green>
+      <knob-blue type="float">0.0</knob-blue>
+    </colors>
+  </smoke>
+
+  <input>
+    <keyboard>
+      <key n="115">
+        <name>s</name>
+        <desc>Autostart</desc>
+        <binding>
+          <command>nasal</command>
+          <script>cs1.Startup();</script>
+        </binding>
+      </key>
+      <key n="19">
+        <name>Ctrl + s</name>
+        <desc>Autostop</desc>
+        <binding>
+          <command>nasal</command>
+          <script>cs1.Shutdown();</script>
+        </binding>
+      </key>
+      <key n="60">
+        <name>&lt;</name>
+        <desc>show Banner</desc>
+        <binding>
+          <command>nasal</command>
+          <script>cs1.banner_start_stop();</script>
+        </binding>
+      </key>
+      <!-- toggle smoke -->
+      <key n="106">
+        <name>j</name>
+        <desc>Toggle smoke</desc>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.SmokeToggle()</script>
+        </binding>
+      </key>
+      <!-- Modify smoke particle per second -->
+      <key n="108">
+        <name>l</name>
+        <desc>Decrease smoke</desc>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.SmokeCounter(-1)</script>
+        </binding>
+      </key>
+      <key n="76">
+        <name>L</name>
+        <desc>Increase smoke</desc>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.SmokeCounter(1)</script>
+        </binding>
+      </key>
+      <!-- select smoke color (first, second, third, fourth color) -->
+      <key n="107">
+        <name>k</name>
+        <desc>Select smoke color</desc>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.SmokeColor()</script>
+        </binding>
+      </key>
+    </keyboard>
+  </input>
+ 
+  <nasal>
+    <cs1>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/cs1.nas</file>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/Electrical.nas</file>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/kr87.nas</file>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/ki266.nas</file>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/immat.nas</file>
+      <script><![CDATA[
+        ki266.new(0);
+        aircraft.data.add( "engines/engine[0]/egt-bug-norm" );
+      ]]></script>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/ap-helper.nas</file>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/banner.nas</file>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/autostart.nas</file>
+    </cs1>
+    <smoke>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/smoke.nas</file>
+    </smoke>
+    <frw>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/frw.nas</file>
+    </frw>
+    <dual_control_tools>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/Gidenstam/dual-control-tools.nas</file>
+    </dual_control_tools>
+    <aircraft_dual_control>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/cs1-dual-control.nas</file>
+    </aircraft_dual_control>
+    <dual_control>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/Gidenstam/pilot-dual-control.nas</file>
+    </dual_control>
+  </nasal>
+
+</PropertyList>
+

@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <path>lights.ac</path>
+  <animation>
+    <type>select</type>
+    <object-name>navlights.on</object-name>
+    <object-name>whiteTail.light</object-name>
+    <condition>
+      <property>sim/multiplay/generic/int[5]</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>landingLight</object-name>
+    <condition>
+      <property>sim/multiplay/generic/int[4]</property>
+    </condition>
+  </animation>
+
+  <animation>
+      <type>select</type>
+      <object-name>strobe.1</object-name>
+      <object-name>strobe.2</object-name>
+      <condition>
+        <property>sim/multiplay/generic/int[3]</property>
+      </condition>
+  </animation>
+
+  <animation>
+      <type>select</type>
+      <object-name>redlight.1</object-name>
+      <object-name>redlight.2</object-name>
+      <condition>
+        <property>sim/multiplay/generic/int[2]</property>
+      </condition>
+  </animation>
+
+  <animation>
+      <type>translate</type>
+      <object-name>strobe.1</object-name>
+      <offset-m>5.8</offset-m>
+      <axis>
+          <x>-0.884</x>
+          <y>-5.730</y>
+          <z>-0.203</z>
+      </axis>
+  </animation>
+
+  <animation>
+      <type>billboard</type>
+      <object-name>strobe.1</object-name>
+  </animation>
+
+  <animation>
+      <type>dist-scale</type>
+      <object-name>strobe.1</object-name>
+      <interpolation>
+      <entry><ind>0</ind><dep>1</dep></entry>
+      <entry><ind>500</ind><dep>2.5</dep></entry>
+      <entry><ind>16000</ind><dep>10</dep></entry>
+      </interpolation>
+  </animation>
+
+  <animation>
+      <type>translate</type>
+      <object-name>strobe.2</object-name>
+      <offset-m>5.8</offset-m>
+      <axis>
+          <x>-0.909</x>
+          <y> 5.741</y>
+          <z>-0.200</z>
+      </axis>
+  </animation>
+
+  <animation>
+      <type>billboard</type>
+      <object-name>strobe.2</object-name>
+  </animation>
+
+  <animation>
+      <type>dist-scale</type>
+      <object-name>strobe.2</object-name>
+      <interpolation>
+      <entry><ind>0</ind><dep>1</dep></entry>
+      <entry><ind>500</ind><dep>2.5</dep></entry>
+      <entry><ind>16000</ind><dep>10</dep></entry>
+      </interpolation>
+  </animation>
+
+  <animation>
+      <type>translate</type>
+      <object-name>redlight.1</object-name>
+      <offset-m>3.65</offset-m>
+      <axis>
+          <x>3.584</x>
+          <y>0.004</y>
+          <z>0.626</z>
+      </axis>
+  </animation>
+
+  <animation>
+      <type>billboard</type>
+      <object-name>redlight.1</object-name>
+  </animation>
+
+  <animation>
+      <type>dist-scale</type>
+      <object-name>redlight.1</object-name>
+      <interpolation>
+      <entry><ind>0</ind><dep>1</dep></entry>
+      <entry><ind>500</ind><dep>2.5</dep></entry>
+      <entry><ind>16000</ind><dep>10</dep></entry>
+      </interpolation>
+  </animation>
+
+  <animation>
+      <type>translate</type>
+      <object-name>redlight.2</object-name>
+      <offset-m>1.8</offset-m>
+      <axis>
+          <x>-1.633</x>
+          <y>0.0</y>
+          <z>-0.735</z>
+      </axis>
+  </animation>
+
+  <animation>
+      <type>billboard</type>
+      <object-name>redlight.2</object-name>
+  </animation>
+
+  <animation>
+      <type>dist-scale</type>
+      <object-name>redlight.2</object-name>
+      <interpolation>
+      <entry><ind>0</ind><dep>1</dep></entry>
+      <entry><ind>500</ind><dep>2.5</dep></entry>
+      <entry><ind>16000</ind><dep>10</dep></entry>
+      </interpolation>
+  </animation>
+
+  <animation>
+      <type>translate</type>
+      <object-name>landingLight</object-name>
+      <offset-m>3.1</offset-m>
+      <axis>
+          <x>-2.150</x>
+          <y>-2.450</y>
+          <z>-0.250</z>
+      </axis>
+  </animation>
+
+  <animation>
+      <type>billboard</type>
+      <object-name>landingLight</object-name>
+  </animation>
+
+  <animation>
+      <type>dist-scale</type>
+      <object-name>landingLight</object-name>
+      <interpolation>
+      <entry><ind>0</ind><dep>1</dep></entry>
+      <entry><ind>500</ind><dep>2.5</dep></entry>
+      <entry><ind>16000</ind><dep>10</dep></entry>
+      </interpolation>
+  </animation>
+
+</PropertyList>
