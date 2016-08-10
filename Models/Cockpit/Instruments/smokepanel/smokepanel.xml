@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>smokepanel.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>knobBlue</object-name>
+    <object-name>knobGreen</object-name>
+    <object-name>knobRed</object-name>
+    <object-name>support</object-name>
+    <object-name>switch1stColor</object-name>
+    <object-name>switch2ndColor</object-name>
+    <object-name>switch3rdColor</object-name>
+    <object-name>switch4thColor</object-name>
+    <emission>
+      <red>0.010</red>
+      <green>0.010</green>
+      <blue>0.010</blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>lamp1stColor</object-name>
+    <object-name>lamp2ndColor</object-name>
+    <object-name>lamp3rdColor</object-name>
+    <object-name>lamp4thColor</object-name>
+    <emission>
+        <red>1</red>
+        <green>0</green>
+        <blue>0</blue>
+        <factor-prop>/systems/electrical/outputs/efis-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <!-- ####################  THE COLOR MIXER ############################ -->
+    <!-- ############# 1st color switch ###############-->
+    <animation>
+        <type>rotate</type>
+        <object-name>switch1stColor</object-name>
+        <property>/smoke/colors/color[0]/scale</property>
+        <factor>50</factor>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.029</x-m>
+            <y-m>-0.004</y-m>
+            <z-m> 0.033</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switch1stHandle</object-name>
+        <visible>false</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>smoke.ChangeColor(0)</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- 1st color control lamp/ control plane -->
+    <animation>
+      <type>material</type>
+      <object-name>lamp1stColor</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lamp1stColor</object-name>
+      <condition>
+        <equals>
+          <property>/smoke/colors/color[0]/scale</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- ############# 2nd color switch ###############-->
+    <animation>
+        <type>rotate</type>
+        <object-name>switch2ndColor</object-name>
+        <property>/smoke/colors/color[1]/scale</property>
+        <factor>50</factor>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.029</x-m>
+            <y-m>-0.004</y-m>
+            <z-m> 0.010</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switch2ndHandle</object-name>
+        <visible>false</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>smoke.ChangeColor(1)</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- 2nd color control lamp/ control plane -->
+    <animation>
+      <type>material</type>
+      <object-name>lamp2ndColor</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lamp2ndColor</object-name>
+      <condition>
+        <equals>
+          <property>/smoke/colors/color[1]/scale</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- ############# 3rd color switch ###############-->
+    <animation>
+        <type>rotate</type>
+        <object-name>switch3rdColor</object-name>
+        <property>/smoke/colors/color[2]/scale</property>
+        <factor>50</factor>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.029</x-m>
+            <y-m>-0.004</y-m>
+            <z-m>-0.015</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switch3rdHandle</object-name>
+        <visible>false</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>smoke.ChangeColor(2)</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- 3rd color control lamp/ control plane -->
+    <animation>
+      <type>material</type>
+      <object-name>lamp3rdColor</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lamp3rdColor</object-name>
+      <condition>
+        <equals>
+          <property>/smoke/colors/color[2]/scale</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- ############# 4th color switch ###############-->
+    <animation>
+        <type>rotate</type>
+        <object-name>switch4thColor</object-name>
+        <property>/smoke/colors/color[3]/scale</property>
+        <factor>50</factor>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.029</x-m>
+            <y-m>-0.004</y-m>
+            <z-m>-0.039</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switch4thHandle</object-name>
+        <visible>false</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>smoke.ChangeColor(3)</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- 2nd color control lamp/ control plane -->
+    <animation>
+      <type>material</type>
+      <object-name>lamp4thColor</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lamp4thColor</object-name>
+      <condition>
+        <equals>
+          <property>/smoke/colors/color[3]/scale</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- ########## the RGB - Knobs ###########-->
+
+    <!-- knob for red RGB setting-->
+    <animation>
+        <type>rotate</type>
+        <object-name>knobRed</object-name>
+        <property>/smoke/colors/knob-red</property>
+        <interpolation>
+          <entry><ind>0</ind><dep>30</dep></entry>
+          <entry><ind>1</ind><dep>330</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-0.027</x-m>
+            <y-m> 0.065</y-m>
+            <z-m>-0.074</z-m>
+        </center>
+    </animation>
+
+    <animation>
+      <type>pick</type>
+      <object-name>scrollKnobRed</object-name>
+      <visible>false</visible>
+      <action>
+        <name>small decrease (scrollwheel)</name>
+        <button>3</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.KnobScroll(0.1,"red")</script>
+        </binding>
+      </action>
+      <action>
+        <name>small increase (scrollwheel)</name>
+        <button>4</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.KnobScroll(-0.1,"red")</script>
+        </binding>
+      </action>
+    </animation>
+
+    <!-- knob for green RGB setting-->
+    <animation>
+        <type>rotate</type>
+        <object-name>knobGreen</object-name>
+        <property>/smoke/colors/knob-green</property>
+        <interpolation>
+          <entry><ind>0</ind><dep>30</dep></entry>
+          <entry><ind>1</ind><dep>330</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.0</x-m>
+            <y-m> 0.065</y-m>
+            <z-m>-0.074</z-m>
+        </center>
+    </animation>
+
+    <animation>
+      <type>pick</type>
+      <object-name>scrollKnobGreen</object-name>
+      <visible>false</visible>
+      <action>
+        <name>small decrease (scrollwheel)</name>
+        <button>3</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.KnobScroll(0.1,"green")</script>
+        </binding>
+      </action>
+      <action>
+        <name>small increase (scrollwheel)</name>
+        <button>4</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.KnobScroll(-0.1,"green")</script>
+        </binding>
+      </action>
+    </animation>
+
+    <!-- knob for blue RGB setting-->
+    <animation>
+        <type>rotate</type>
+        <object-name>knobBlue</object-name>
+        <property>/smoke/colors/knob-blue</property>
+        <interpolation>
+          <entry><ind>0</ind><dep>30</dep></entry>
+          <entry><ind>1</ind><dep>330</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.028</x-m>
+            <y-m> 0.065</y-m>
+            <z-m>-0.074</z-m>
+        </center>
+    </animation>
+
+    <animation>
+      <type>pick</type>
+      <object-name>scrollKnobBlue</object-name>
+      <visible>false</visible>
+      <action>
+        <name>small decrease (scrollwheel)</name>
+        <button>3</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.KnobScroll(0.1,"blue")</script>
+        </binding>
+      </action>
+      <action>
+        <name>small increase (scrollwheel)</name>
+        <button>4</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.KnobScroll(-0.1,"blue")</script>
+        </binding>
+      </action>
+    </animation>
+
+
+
+
+</PropertyList>
+

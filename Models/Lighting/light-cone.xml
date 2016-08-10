@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Common-Spruce CS1 for Flightgear September 2010
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+  <path>light-cone.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object-name>Cone-texture</object-name>
+    <condition>
+      <property>sim/multiplay/generic/int[4]</property>
+    </condition>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Common-Spruce-CS1/Models/Effects/light-cone.eff</inherits-from>
+    <object-name>Cone</object-name>
+  </effect>
+  
+ </PropertyList>

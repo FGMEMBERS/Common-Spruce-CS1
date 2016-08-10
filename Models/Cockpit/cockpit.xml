@@ -1,0 +1,315 @@
+<?xml version = '1.0'?>
+ <!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Common-Spruce CS1 for Flightgear September 2010
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+    <model>
+        <name>Magnetic Compass</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/compass/compass_magnetic.xml</path>
+        <offsets>
+            <x-m>-2.033</x-m>
+            <y-m>-0.015</y-m>
+            <z-m> 0.352</z-m>
+            <pitch-deg>-8</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>AP Switches</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/ap/ap.xml</path>
+        <offsets>
+            <x-m>-2.038</x-m>
+            <y-m> 0.127</y-m>
+            <z-m> 0.354</z-m>
+            <pitch-deg>-8</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>DME Distance</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/ki266/ki266.xml</path>
+        <offsets>
+            <x-m>-2.038</x-m>
+            <y-m>-0.080</y-m>
+            <z-m> 0.351</z-m>
+            <pitch-deg>-8</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>AGL Radar</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/agl-radar/aglradar.xml</path>
+        <offsets>
+            <x-m>-2.038</x-m>
+            <y-m>-0.160</y-m>
+            <z-m> 0.351</z-m>
+            <pitch-deg>-8</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>ASI</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/asi300/asi300.xml</path>
+        <offsets>
+            <x-m>-2.038</x-m>
+            <y-m>-0.170</y-m>
+            <z-m> 0.280</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>EFIS84 EADI-pilot</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/eadi/eadi.xml</path>
+        <offsets>
+            <x-m>-2.040</x-m>
+            <y-m>-0.070</y-m>
+            <z-m> 0.290</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>EFIS84 EHSI-pilot</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/ehsi/ehsi.xml</path>
+        <offsets>
+            <x-m>-2.040</x-m>
+            <y-m> 0.040</y-m>
+            <z-m> 0.290</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>AP Alt Set</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/alt-set/altset.xml</path>
+        <offsets>
+            <x-m>-2.060</x-m>
+            <y-m> 0.140</y-m>
+            <z-m> 0.328</z-m>
+            <pitch-deg>-18</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>ALT</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/alt-mb/altimeter1.xml</path>
+        <offsets>
+            <x-m>-2.038</x-m>
+            <y-m> 0.140</y-m>
+            <z-m> 0.280</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>VSI</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/vsi/vsi.xml</path>
+        <offsets>
+            <x-m>-2.005</x-m>
+            <y-m> 0.140</y-m>
+            <z-m> 0.195</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>RPM</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/rpm/rpm.xml</path>
+        <offsets>
+            <x-m>-2.005</x-m>
+            <y-m>-0.170</y-m>
+            <z-m> 0.195</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Pic Deviation</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/pic-dev/pic-dev.xml</path>
+        <offsets>
+            <x-m>-2.005</x-m>
+            <y-m>-0.070</y-m>
+            <z-m> 0.195</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Heading Direction</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/dir-gyro/dir-gyro.xml</path>
+        <offsets>
+            <x-m>-2.005</x-m>
+            <y-m> 0.040</y-m>
+            <z-m> 0.195</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Fuel Select</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/fuel/fuel-select.xml</path>
+        <offsets>
+            <x-m>-1.970</x-m>
+            <y-m>-0.173</y-m>
+            <z-m> 0.120</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model> 
+        <name>Fuel Instrument</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/fuel/fuel-gauge.xml</path>
+        <offsets>
+            <x-m>-1.975</x-m>
+            <y-m>-0.100</y-m>
+            <z-m> 0.118</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Magneto switch</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/magnetos/magnetos.xml</path>
+        <offsets>
+            <x-m>-1.975</x-m>
+            <y-m>-0.021</y-m>
+            <z-m> 0.121</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Gear Lever and Brake</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/ldg-control/ldg-control-panel.xml</path>
+        <offsets>
+            <x-m>-1.960</x-m>
+            <y-m> 0.050</y-m>
+            <z-m> 0.110</z-m>
+            <pitch-deg>-20</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Flaps Control</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/flaps/flaps.xml</path>
+        <offsets>
+            <x-m>-1.975</x-m>
+            <y-m> 0.060</y-m>
+            <z-m> 0.118</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Mouse Control</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/msctrl/msctrl.xml</path>
+        <offsets>
+            <x-m>-1.975</x-m>
+            <y-m> 0.140</y-m>
+            <z-m> 0.118</z-m>
+            <pitch-deg>-22</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>KY196 Comm1</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/ky196/ky196-comm1.xml</path>
+        <offsets>
+            <x-m>-1.750</x-m>
+            <y-m>-0.180</y-m>
+            <z-m> 0.570</z-m>
+            <pitch-deg>6</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>KN53 Nav1</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/kn53/kn53-nav1.xml</path>
+        <offsets>
+            <x-m>-1.750</x-m>
+            <y-m>-0.018</y-m>
+            <z-m> 0.570</z-m>
+            <pitch-deg>6</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>KR87 ADF</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/kr87/kr87.xml</path>
+        <offsets>
+            <x-m>-1.750</x-m>
+            <y-m>0.145</y-m>
+            <z-m>0.570</z-m>
+            <pitch-deg>6</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Battery Gauge</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/BatteryGauge/BatteryGauge.xml</path>
+        <offsets>
+            <x-m>-2.040</x-m>
+            <y-m>-0.267</y-m>
+            <z-m> 0.313</z-m>
+            <pitch-deg>-19</pitch-deg>
+            <heading-deg> 30 </heading-deg>
+            <roll-deg> -13 </roll-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Trim wheels</name>
+        <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/trim/trim.xml</path>
+        <offsets>
+            <x-m>-1.801</x-m>
+            <y-m> 0.252</y-m>
+            <z-m> 0.208</z-m>
+        </offsets>
+    </model>
+
+    <!-- Pilots FlightRallyeWath -->
+    <model>
+      <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/frw/frw.xml</path>
+      <offsets>
+        <x-m>-1.853</x-m>
+        <y-m>0.210</y-m>
+        <z-m>0.485</z-m>
+        <pitch-deg> -5 </pitch-deg>
+      </offsets>
+    </model>
+
+    <!-- Smoke Panel -->
+    <model>
+      <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/smokepanel/smokepanel.xml</path>
+      <offsets>
+        <x-m>-1.605</x-m>
+        <y-m> 0.254</y-m>
+        <z-m> 0.200</z-m>
+      </offsets>
+    </model>
+
+    <!-- Smoke Active Panel -->
+    <model>
+      <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/smokepanel/smokeActive.xml</path>
+      <offsets>
+        <x-m>-1.905</x-m>
+        <y-m> 0.256</y-m>
+        <z-m> 0.240</z-m>
+      </offsets>
+    </model>
+
+    <!-- thermometer -->
+    <model>
+      <path>Aircraft/Common-Spruce-CS1/Models/Cockpit/Instruments/thermometer/OAT.xml</path>
+      <offsets>
+        <x-m>-1.271</x-m>
+        <y-m> 0.304</y-m>
+        <z-m> 0.496</z-m>
+      </offsets>
+    </model>
+
+</PropertyList>

@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+ <!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Common-Spruce CS1 for Flightgear September 2010
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+  <sim>
+    <description>CS-1 Copilot [only for good server connection :-)]</description>
+    <flight-model>null</flight-model>
+
+    <sound>
+      <path>Aircraft/Common-Spruce-CS1/Sounds/cs1-sound.xml</path>
+      <volume>0.5</volume>
+    </sound>
+
+    <startup>
+     <splash-texture>Aircraft/Common-Spruce-CS1/cs1-splash.png</splash-texture>
+    </startup>
+
+    <remote>
+     <pilot-callsign type="string"></pilot-callsign>
+    </remote>
+
+    <model>
+      <path archive="y">Aircraft/Common-Spruce-CS1/Models/CS-1-Copilot.xml</path>
+      <variant type="int"> 0 </variant>
+    </model>
+ 
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <!-- nothing possible -->
+      </generic>
+    </multiplay>
+
+    <menubar include="Dialogs/cs1-copilot-menu.xml"/>
+
+    <help include="Dialogs/help.xml"/>
+
+    <view n="0">
+      <name>Copilot Views</name>
+      <internal archive="y">true</internal>
+      <config>
+       <x-offset-m archive="y">-0.010 </x-offset-m>	<!-- Right -->
+       <y-offset-m archive="y"> 0.470 </y-offset-m>	<!-- Up    -->
+       <z-offset-m archive="y">-0.720 </z-offset-m>	<!-- Back  -->
+       <pitch-offset-deg> -8.000 </pitch-offset-deg>
+        <default-field-of-view-deg>60</default-field-of-view-deg>
+      </config>
+    </view>
+
+    <view n="100">
+      <internal archive="y">true</internal>
+      <config>
+       <x-offset-m archive="y">-0.010 </x-offset-m>	<!-- Right -->
+       <y-offset-m archive="y"> 0.470 </y-offset-m>	<!-- Up    -->
+       <z-offset-m archive="y">-1.365 </z-offset-m>	<!-- Back  -->
+       <pitch-offset-deg> -8.000 </pitch-offset-deg>
+        <default-field-of-view-deg>60</default-field-of-view-deg>
+      </config>
+    </view>
+
+    <view n="1">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="2">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="3">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="4">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="5">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="6">
+      <config>
+        <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      </config>
+    </view>
+
+  </sim>
+
+  <controls>
+    <engines>
+      <engine>
+        <magnetos type="int" value="0" />
+      </engine>
+    </engines>
+    <flight>
+      <flaps type="double">0</flaps>
+      <flaps-cmd type="int">0</flaps-cmd>
+      <flaps-cmd-pos type="double">0</flaps-cmd-pos>
+    </flight>
+    <gear>
+      <tailwheel-lock type="bool">true</tailwheel-lock>
+      <tailwheel-lock-pos type="double">1</tailwheel-lock-pos>
+      <brake-parking type="bool">true</brake-parking>
+      <brake-parking-pos type="double">1</brake-parking-pos>
+      <gear-down type="bool">true</gear-down>
+    </gear>
+    <electric>
+        <avionics-switch type="bool">1</avionics-switch>
+    </electric>
+    <lighting>
+      <strobe type="bool">false</strobe>
+      <nav-lights type="bool">false</nav-lights>
+      <instrument-lights type="bool">false</instrument-lights>
+      <landing-lights type="bool">false</landing-lights>
+    </lighting>
+    <airport>
+        <stewardess type="bool">0</stewardess>
+        <airport-country-id type="string">XY</airport-country-id>
+    </airport>
+  </controls>
+
+  <surface-positions>
+    <flap-pos-norm type="float" value="0"/>
+  </surface-positions>
+
+  <engines>
+    <engine n="0">
+      <engine-num type="int">0</engine-num>
+      <rpm type="double">0</rpm>
+      <running type="bool">false</running>
+      <cranking type="bool">false</cranking>
+    </engine>
+  </engines>
+
+  <instrumentation>
+    <kr-87>
+      <inputs>
+        <volume>0.05</volume>
+      </inputs>
+    </kr-87>
+    <!-- Flightgear Rallye Watch  -->
+    <frw>
+      <running type="bool">0</running>
+      <btn-mode type="bool">0</btn-mode>
+      <btn-reset type="bool">0</btn-reset>
+      <btn-start-stop type="bool">0</btn-start-stop>
+      <flight-time>
+        <start-time type="double">0</start-time>
+        <accu type="double">0</accu>
+        <total type="double">0</total>
+        <hours type="int">0</hours>
+        <minutes type="int">0</minutes>
+        <seconds type="int">0</seconds>
+      </flight-time>
+    </frw>
+    <aglradar>
+      <power-btn type="bool">1</power-btn>
+      <switch-meter-ft type="bool">1</switch-meter-ft>
+    </aglradar>
+    <!-- not nil for instrument-view -->
+    <nav>
+     <radials>
+        <selected-deg type="double">0.0</selected-deg>
+     </radials>
+    </nav>
+    <altimeter>
+     <setting-inhg type="double">0.0</setting-inhg>
+    </altimeter>
+    <heading-indicator>
+     <offset-deg type="double">0.0</offset-deg>
+    </heading-indicator>
+  </instrumentation>
+
+  <!-- not nil for ap-instrument -->
+  <autopilot>
+    <settings>
+        <target-speed-kt type="double">260</target-speed-kt>
+        <target-pitch-deg type="double">0</target-pitch-deg>
+        <target-altitude-ft type="int">0</target-altitude-ft>
+        <heading-bug-deg type="int">0</heading-bug-deg>
+    </settings>
+    <switches>
+      <ap type="bool">0</ap>
+      <hdg type="bool">0</hdg>
+      <alt type="bool">0</alt>
+      <ias type="bool">0</ias>
+      <nav type="bool">0</nav>
+      <appr type="bool">0</appr>
+    </switches>    
+  </autopilot>
+
+  <!-- not nil for fuel-instrument -->
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <density-ppg type="double">5.999</density-ppg>
+      </tank>
+      <tank n="1">
+        <density-ppg type="double">5.999</density-ppg>
+      </tank>
+      <tank n="2">
+        <density-ppg type="double">5.999</density-ppg>
+      </tank>
+      <tank n="3">
+        <density-ppg type="double">5.999</density-ppg>
+      </tank>
+    </fuel>
+  </consumables>
+  <!-- not nil for Sound -->
+  <gear>
+   <gear n="1">
+    <wow type="bool">0</wow>
+    <position-norm type="double">0.0</position-norm>
+   </gear>
+  </gear>
+  <!-- not nil for AGL-Radar -->
+  <position>
+    <gear-agl-ft type="float">0.0</gear-agl-ft>
+    <gear-agl-m type="float">0.0</gear-agl-m>
+  </position>
+
+  <smoke>
+    <active type="int">0</active>
+    <particlepersec>50</particlepersec>
+    <color>0</color>
+    <red type="float">1.0</red>
+    <green type="float">1.0</green>
+    <blue type="float">1.0</blue>
+    <colors>
+      <color><!-- first default white -->
+        <red type="float">1.0</red>
+        <green type="float">1.0</green>
+        <blue type="float">1.0</blue>
+        <scale type="bool">0</scale>
+      </color>
+      <!-- Badische Flagge - flag from the south-west of germany -->
+      <color><!-- second default yellow -->
+        <red type="float">1.0</red>
+        <green type="float">1.0</green>
+        <blue type="float">0.0</blue>
+        <scale type="bool">0</scale>
+      </color>
+      <color><!-- third default red -->
+        <red type="float">1.0</red>
+        <green type="float">0.0</green>
+        <blue type="float">0.0</blue>
+        <scale type="bool">0</scale>
+      </color>
+      <color><!-- fourth default yellow -->
+        <red type="float">1.0</red>
+        <green type="float">1.0</green>
+        <blue type="float">0.0</blue>
+        <scale type="bool">0</scale>
+      </color>
+      <knob-red type="float">0.0</knob-red>
+      <knob-green type="float">0.0</knob-green>
+      <knob-blue type="float">0.0</knob-blue>
+    </colors>
+  </smoke>
+
+  <nasal>
+    <cs1>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/cs1-copilot.nas</file>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/kr87.nas</file>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/ki266.nas</file>
+      <script><![CDATA[
+        ki266.new(0);
+        aircraft.data.add( "engines/engine[0]/egt-bug-norm" );
+      ]]></script>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/copilot-banner.nas</file>
+    </cs1>
+    <smoke>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/copilot-smoke.nas</file>
+    </smoke>
+    <frw>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/frw.nas</file>
+    </frw>
+    <dual_control_tools>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/Gidenstam/dual-control-tools.nas</file>
+    </dual_control_tools>
+    <aircraft_dual_control>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/cs1-dual-control.nas</file>
+    </aircraft_dual_control>
+    <dual_control>
+      <file>Aircraft/Common-Spruce-CS1/Nasal/Gidenstam/copilot-dual-control.nas</file>
+    </dual_control>
+  </nasal>
+
+</PropertyList>
+

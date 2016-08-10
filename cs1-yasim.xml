@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+ <!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Common-Spruce CS1 for Flightgear September 2010
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<!-- Common - Spruce CS 1 by Marc Kraus / FDM mixed by different models --> 
+
+<airplane mass="3209" >
+
+  <approach speed="90" aoa="4" >
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <solve-weight idx="0" weight="180"/>
+    <solve-weight idx="1" weight="0"/>
+  </approach>
+  
+  <cruise speed="310" alt="5000" >
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.8" />
+    <solve-weight idx="0" weight="180"/>
+    <solve-weight idx="1" weight="0"/>
+  </cruise>
+
+  <cockpit x="-1.657" y="0" z="0.415"/>
+
+  <fuselage ax="3.776" ay="0" az="-0.043" bx="-4.198" by="0" bz="0.111" width="0.965" taper="0.3" midpoint="0.2"/>
+
+  <wing x="1.140" y="0.470" z="-0.400" 
+    chord="2.00" 
+    length="5.70" 
+    taper="0.49" 
+    sweep="-2.5" 
+    dihedral="5" 
+    camber="0.01">
+    <stall aoa="16" width="5" peak="1.5"/>
+    <flap0 start="0.05" end="0.42" lift="1.7" drag="1.9"/>
+    <flap1 start="0.42" end="0.85" lift="1.4" drag="1.1"/>
+
+    <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+    <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+    <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+    <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+    <control-output control="FLAP1" side="left" prop="surface-positions/left-aileron-pos-norm"/>
+    <control-output control="FLAP1" side="right" prop="surface-positions/right-aileron-pos-norm"/>
+
+    <control-speed control="FLAP0" transition-time="7"/>
+    <control-speed control="FLAP1" transition-time="1"/>
+  </wing>
+  
+  <hstab x="-2.977" y="0" z="0.247" 
+	 chord="1.130" 
+	 length="2.056" 
+   taper="0.51"
+   sweep="3"> 
+   <stall aoa="16" width="8" peak="1.5"/>
+
+          <!--<stall aoa="17" width="4.2" peak="1.5"/>-->
+          <!--flap0 start="0" end="1" lift="1.72" drag="0.9"/-->
+          <!--<flap0 start="0" end="1" lift="1.55" drag="1.1"/>-->
+
+   <flap0 start="0.0" end="1.0" lift="1.55" drag="1.3"/>
+
+   <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-3.226" y="0" z="0.296" 
+	 chord="1.777" 
+	 length="1.4" 
+         taper="0.26" 
+	 sweep="17">
+         <stall aoa="14" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
+
+         <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"  min="1" max="-1"/>
+  </vstab>
+
+  <propeller x="2.605" y="0.0" z="-0.126"
+    radius="1.45"
+    mass="1024"
+    moment="35"
+    cruise-speed="310"
+    cruise-alt="5000"
+    cruise-power="1048"
+    cruise-rpm="2450"
+    takeoff-power="1048"
+    takeoff-rpm="2450">
+    <piston-engine eng-rpm="2450"
+                  eng-power="1300"
+                  displacement="2199.9"
+                  compression="5.8"/>
+    <actionpt x="3.987" y="0.0" z="-0.043"/>
+    <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
+    <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
+    <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
+    <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
+  </propeller>
+
+
+  <!-- left main -->
+  <gear x="1.484" y="1.944" z="-1.789" 
+    compression="0.4"
+    retract-time="5"
+    spring="0.8"
+    damp="0.6"
+    sfric="1.0"
+    dfric="0.8">
+    <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-speed control="EXTEND" transition-time="5.1"/>
+    <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  </gear>
+
+  <!-- right main -->
+  <gear x="1.484" y="-1.944" z="-1.789" 
+    compression="0.4"
+    retract-time="5"
+    spring="0.8"
+    damp="0.6"
+    sfric="1.0"
+    dfric="0.8">
+    <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-speed control="EXTEND" transition-time="5.1"/>
+    <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+  </gear>
+
+  <!-- noze wheel -->
+  <gear x="3.400" y="0.0" z="-1.789"
+    compression="0.2"
+    retract-time="5"
+    spring="0.8"
+    damp="0.6">
+    <control-input axis="/controls/flight/rudder" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.8" dst1="0.8"/>
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-speed control="EXTEND" transition-time="5.1"/>
+    <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  </gear>
+
+  <!-- Taildragger -->
+  <gear x="-6.785" y="0" z="-0.311" 
+     compression="0.1"
+     spring="0.8"
+     sfric="1"
+     dfric="1">
+     <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="0.8" dst1="-0.8"/>
+      <control-output control="EXTEND" prop="/gear/gear[3]/position-norm"/>
+  </gear>
+
+  <!-- Fuel  -->  
+  <tank x=" 1.5" y="0" z="-0.7" capacity="335" />
+  <tank x=" 0.0" y="0" z="-0.7" capacity="335" />
+  <tank x="-1.5" y="0" z="-0.7" capacity="220" />
+  <tank x="-2.4" y="0" z="-0.7" capacity="600" />
+
+  <weight x="0.5278" y="0.0" z="-0.5" mass-prop="/sim/weight[0]/weight-lb"/>
+  <weight x="-0.38" y="0" z="-0.5" mass-prop="/sim/weight[1]/weight-lb"/>
+  <weight x="-1.8" y="0" z="-0.5" mass-prop="/sim/weight[2]/weight-lb"/>
+  <weight x="-2.6" y="0" z="-0.5" mass-prop="/sim/weight[3]/weight-lb"/>
+
+  <ballast x="3.86" y="0.001" z="-2.85" mass="530" />
+
+</airplane>
+

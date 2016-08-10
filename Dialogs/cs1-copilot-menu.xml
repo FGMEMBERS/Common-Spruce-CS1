@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Common-Spruce CS1 for Flightgear September 2010
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+  <default>
+    <menu n="10">
+      <label>CS 1</label>
+      <enabled type="bool">true</enabled>
+      <item>
+        <label>Select MP-Pilot</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            dual_control_tools.copilot_dialog.show(aircraft_dual_control.pilot_type);
+          </script>
+        </binding>
+      </item>
+    </menu>
+  </default>
+
+</PropertyList>

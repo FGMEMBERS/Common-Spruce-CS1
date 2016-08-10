@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+	<path>ldg-and-brake.ac</path>
+
+	<animation>
+		<object-name>lamp-red</object-name> 
+		<type>material</type>
+		<emission>
+			<red>1</red>
+			<green>0</green>
+			<blue>0</blue>
+      <factor-prop>/systems/electrical/outputs/efis-lights</factor-prop>
+		</emission>
+	</animation>
+	<animation>
+		<object-name>lamp-green</object-name> 
+		<type>material</type>
+		<emission>
+			<red>0</red>
+			<green>1</green>
+			<blue>0</blue>
+      <factor-prop>/systems/electrical/outputs/efis-lights</factor-prop>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>brake-handle</object-name>
+		<property>/controls/gear/brake-parking</property>
+		<factor>0.0834</factor>
+		<axis>
+			<x>0.0834</x>
+			<y>-0.0084</y>
+			<z>0.0000</z>
+		</axis>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>brake-handle</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/gear/brake-parking</property>
+      </binding>
+    </action>
+  </animation>
+
+<!-- gears up and down -->
+	<animation>
+		<type>rotate</type>
+		<object-name>ld-gear-handle</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind>1</ind><dep>-18</dep></entry>
+			<entry><ind>0.5</ind><dep>6</dep></entry>
+			<entry><ind>0</ind><dep>30</dep></entry> 
+		</interpolation>  
+		<center>
+			<x-m>-0.0322</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.0350</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>ld-gear-handle</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/gear/gear-down</property>
+      </binding>
+    </action>
+  </animation>
+
+
+	<!-- lighting -->
+  <animation>
+      <type>material</type>
+      <object-name>switches-and-levers</object-name>
+      <emission>
+          <red>0.005</red>
+          <green>0.005</green>
+          <blue>0.005</blue>
+          <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      </emission>
+  </animation>
+
+
+<!-- select lamps -->
+	<animation>
+		<type>select</type>
+		<object-name>lamp-green</object-name>
+		<condition>
+		  <equals>
+			  <property>gear/gear[0]/position-norm</property>
+			  <value>1</value>
+		  </equals>
+			<property>/systems/electrical/outputs/efis-lights</property>
+		</condition>  
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>lamp-red</object-name>
+		<condition>
+		  <less-than>
+			  <property>gear/gear[0]/position-norm</property>
+			  <value>1</value>
+		  </less-than>
+			<property>/systems/electrical/outputs/efis-lights</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>lamp-off</object-name>
+		<condition>
+		  <less-than>
+			  <property>/systems/electrical/outputs/efis-lights</property>
+			  <value>6</value>
+		  </less-than>
+		</condition>  
+	</animation>
+
+
+
+</PropertyList>

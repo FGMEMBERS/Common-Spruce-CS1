@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Common-Spruce CS1 for Flightgear September 2010
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+  <default>
+    <menu n="10">
+      <label>CS 1</label>
+      <enabled type="bool">true</enabled>
+      <item>
+        <label>Immatriculation</label>
+        <binding>
+          <command>nasal</command>
+          <script>cs1.immat_dialog.toggle()</script>
+        </binding>
+      </item>
+      <item>
+        <label>Banner LSZH</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            setprop("controls/banner/selected",1);
+          </script>
+        </binding>
+      </item>
+      <item>
+        <label>Banner LOWI</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            setprop("controls/banner/selected",2);
+          </script>
+        </binding>
+      </item>      
+      <item>
+        <label>Banner LSZS</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            setprop("controls/banner/selected",3);
+          </script>
+        </binding>
+      </item>
+      <item>
+        <label>Select MP-Pilot-Instructor</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            dual_control_tools.copilot_dialog.show(aircraft_dual_control.copilot_type);
+          </script>
+        </binding>
+      </item>
+    </menu>
+  </default>
+
+</PropertyList>

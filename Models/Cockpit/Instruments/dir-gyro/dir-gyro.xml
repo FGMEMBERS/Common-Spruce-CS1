@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+
+<PropertyList>
+
+<path>dir-gyro.ac</path>
+    <animation>
+        <type>material</type>
+        <object-name>hdgOldKnob</object-name>
+        <emission>
+            <red>0.005</red>
+            <green>0.005</green>
+            <blue>0.005</blue>
+            <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>HDGpointer</object-name>
+        <object-name>HDGneedle</object-name>
+        <emission>
+            <red>0.35</red>
+            <green>0.35</green>
+            <blue>0.35</blue>
+            <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>HDGneedle</object-name>
+        <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+<!-- Hotspots -->
+  <animation>
+    <type>rotate</type>
+    <object-name>hdgOldKnob</object-name>
+    <property>/instrumentation/heading-indicator/offset-deg</property>
+    <factor>-10</factor>
+    <center>
+      <x-m> 4.3603</x-m>
+      <y-m> 0.0296</y-m>
+      <z-m>-0.0288</z-m>
+    </center>
+    <axis>
+      <x>-1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>hdgOld.plane</object-name>
+        <visible>false</visible>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator/offset-deg</property>
+                <step>1</step>
+                <min>-45.0</min>
+                <max>45.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator/offset-deg</property>
+                <step>-1</step>
+                <min>-45.0</min>
+                <max>45.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator/offset-deg</property>
+                <step>1</step>
+                <min>-45.0</min>
+                <max>45.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator/offset-deg</property>
+                <step>-1</step>
+                <min>-45.0</min>
+                <max>45.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>smokeActive.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>knobSmoke</object-name>
+    <object-name>switchSmoke</object-name>
+    <emission>
+      <red>0.008</red>
+      <green>0.008</green>
+      <blue>0.008</blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>smokeSupport</object-name>
+    <emission>
+      <red>0.012</red>
+      <green>0.012</green>
+      <blue>0.012</blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>lampSmoke</object-name>
+    <emission>
+        <red>1</red>
+        <green>0</green>
+        <blue>0</blue>
+        <factor-prop>/systems/electrical/outputs/efis-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <!-- The smoke settings and actions -->
+  <!-- First the main switch on/off for the smoke on the center top of panel -->
+    <animation>
+        <type>rotate</type>
+        <object-name>switchSmoke</object-name>
+        <property>/smoke/active</property>
+        <factor>50</factor>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-0.03</x-m>
+            <y-m>-0.003</y-m>
+            <z-m>-0.01</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchSmokeHandle</object-name>
+        <visible>false</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>smoke.SmokeToggle()</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lampSmoke</object-name>
+      <condition>
+        <equals>
+          <property>/smoke/active</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- the 4 posibilities on the color selector at top main smoke panel -->
+    <!-- 1st color direct select on knob border -->
+    <animation>
+      <type>pick</type>
+      <object-name>sel1stColor</object-name>
+      <visible>false</visible>
+      <action>
+        <name>select first color</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.SmokeSelColor(0)</script>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/sim/sound/switch</property>
+        </binding>
+      </action>
+    </animation>
+    <!-- snd color direct select on knob border -->
+    <animation>
+      <type>pick</type>
+      <object-name>sel2ndColor</object-name>
+      <visible>false</visible>
+      <action>
+        <name>select second color</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.SmokeSelColor(1)</script>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/sim/sound/switch</property>
+        </binding>
+      </action>
+    </animation>    
+    <!-- 3rd color direct select on knob border -->
+    <animation>
+      <type>pick</type>
+      <object-name>sel3rdColor</object-name>
+      <visible>false</visible>
+      <action>
+        <name>select third color</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.SmokeSelColor(2)</script>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/sim/sound/switch</property>
+        </binding>
+      </action>
+    </animation>
+    <!-- 4th color direct select on knob border -->
+    <animation>
+      <type>pick</type>
+      <object-name>sel4thColor</object-name>
+      <visible>false</visible>
+      <action>
+        <name>select fourth color</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>smoke.SmokeSelColor(3)</script>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/sim/sound/switch</property>
+        </binding>
+      </action>
+    </animation>
+
+
+    <!-- the main smoke knob for selecting the colors on top center of the panel -->
+    <animation>
+        <type>rotate</type>
+        <object-name>knobSmoke</object-name>
+        <property>/smoke/color</property>
+        <interpolation>
+          <entry><ind>0</ind><dep>0</dep></entry>
+          <entry><ind>1</ind><dep>90.0</dep></entry>
+          <entry><ind>2</ind><dep>180.0</dep></entry>
+          <entry><ind>3</ind><dep>270.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.009</x-m>
+            <y-m>-0.003</y-m>
+            <z-m> 0.001</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>knobSmoke</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>smoke.SmokeColor()</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+</PropertyList>
+
