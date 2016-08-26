@@ -1,3 +1,12 @@
+###############################################################################
+##  Nasal for Common-Spruce CS 1.
+##
+##  Copyright (C) 2007 - 20016  Marc Kraus  (info(at)marc-kraus.de)
+##  This file is licensed under the GPL license version 2 or later.
+##
+##  For the CS 1, written in January 2012 by Marc Kraus
+##
+###############################################################################
 # if engine running stop starter
 setlistener("engines/engine[0]/running", func(run) {
     var run = run.getBoolValue();

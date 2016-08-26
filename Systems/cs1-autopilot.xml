@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
- 
+ <!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Common-Spruce CS1 for Flightgear September 2010
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+--> 
 <!-- Generic Autopilot Configuration -->
 
 <!-- Each component is evaluated in the order specified.  You can make up -->
